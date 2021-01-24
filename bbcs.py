@@ -7,7 +7,7 @@ import os
 import pync
 from datetime import datetime
 
-OUTPUT_DIR = '/Users/lucasmarandat/Downloads/'
+OUTPUT_DIR = '/Users/lucasmarandat/Screenshots/'
 HEIGHT = 600
 
 
