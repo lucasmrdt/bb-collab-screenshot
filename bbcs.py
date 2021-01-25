@@ -5,10 +5,16 @@ import cv2
 import pyscreenshot as ImageGrab
 import os
 import pync
+import subprocess
 from datetime import datetime
 
 OUTPUT_DIR = '/Users/lucasmarandat/Screenshots/'
 HEIGHT = 600
+
+
+def copy_image_to_clipboard(file_path):
+    subprocess.run(
+        ["osascript", "-e", f'set the clipboard to (read (POSIX file "{file_path}") as JPEG picture)'])
 
 
 def get_max_contour(img):
@@ -16,9 +22,9 @@ def get_max_contour(img):
     contours, _ = cv2.findContours(
         img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     for contour in contours:
-        area = cv2.contourArea(contour)
-        if area > m:
-            selected, m = contour, area
+        _, _, w, h = cv2.boundingRect(contour)
+        if w*h > m:
+            selected, m = contour, w*h
     if m == 0:
         raise Exception('Contour not found')
     return cv2.boundingRect(selected)
@@ -42,6 +48,7 @@ def save_bb_collab_screen():
     now = datetime.now().strftime('%m-%d-%H-%M-%S')
     file_path = os.path.join(OUTPUT_DIR, f'{now}.png')
     cv2.imwrite(file_path, img)
+    copy_image_to_clipboard(file_path)
     return file_path
 
 
