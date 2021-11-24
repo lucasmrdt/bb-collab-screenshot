@@ -1,5 +1,5 @@
 # BB Collab Screenshot
-> Allow you to quicly screenshot the displayed course on [BB Collab](https://us.bbcollab.com/collab/ui/scheduler/).
+> Allow you to quickly screenshot the displayed course on [BB Collab](https://us.bbcollab.com/collab/ui/scheduler/).
 
 ---
 
