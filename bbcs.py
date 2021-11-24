@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/lucasmarandat/Binaries/homebrew/bin/python3
 
 import numpy as np
 import cv2

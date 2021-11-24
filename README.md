@@ -1,10 +1,20 @@
 # BB Collab Screenshot
-Auto crop BB Collab Window to screenshot the displayed course.
+> Allow you to quicly screenshot the displayed course on [BB Collab](https://us.bbcollab.com/collab/ui/scheduler/).
+
+---
+
+## Table of Contents
+
+- [How does it works](#How-does-it-work-?)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
 
 
 ## How does it work ?
 
-### 1 - make some necessary imports ...
+### 1 - Make some necessary imports ...
 
 
 ```python
@@ -14,7 +24,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 ```
 
-### 2 - take a fullscreen screenshot
+### 2 - Take a full-screen screenshot.
 
 To do so, we use `Image.grab` and then convert the screenshot into `np.array`.
 
@@ -32,7 +42,7 @@ plt.show()
     
 
 
-### 3 - Create a mask which extract only black pixels
+### 3 - Create a mask that extracts only black pixels.
 
 
 ```python
@@ -50,7 +60,7 @@ plt.show()
     
 
 
-### 5 - Define a fonction which return the max rectangle
+### 5 - Define a function that returns the max rectangle.
 
 
 ```python
@@ -66,7 +76,7 @@ def get_max_contour(img):
     return cv.boundingRect(selected)
 ```
 
-### 6 - Select the first main area
+### 6 - Select the first main area.
 
 
 ```python
@@ -89,7 +99,7 @@ plt.show()
     
 
 
-### 7 - Crop the main area to only keep usefull informations
+### 7 - Crop the main area to only keep useful information.
 
 
 ```python
@@ -110,8 +120,21 @@ plt.show()
 ![svg](notebook_files/notebook_13_0.svg)
     
 
+---
 
+## Contributing
 
-```python
+Fell free to add more useful features, test it and report issues.
 
-```
+## Support
+
+Reach out to me at one of the following places!
+
+- Website at <a href="https://lucas-marandat.fr" target="_blank">`lucas-marandat.fr`</a>
+- LinkedIn at <a href="https://www.linkedin.com/in/lucasmrdt/" target="_blank">`@lucasmrdt`</a>
+
+## License
+
+[![License](https://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
